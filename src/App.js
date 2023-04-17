@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserView, MobileView} from 'react-device-detect'
+import Home from "./HomePage/Home"
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserView>
+        <h1>PC는 지원하지 않습니다.</h1>
+        <h1>모바일에서 접속해주세요.</h1>
+      </BrowserView>
+      <MobileView>
+        <Home />
+      </MobileView>
     </div>
+    
   );
 }
 
